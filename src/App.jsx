@@ -1,15 +1,14 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import LoadingPage from './containers/LoadingPage'
+import SignUp from './containers/SignUp'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-         <h1 className="text-3xl font-bold underline cursor-pointer">
-      Hello world!
-    </h1>
+    <div>
+      <LoadingPage/>
+      <SignUp/>
     </div>
   )
 }
