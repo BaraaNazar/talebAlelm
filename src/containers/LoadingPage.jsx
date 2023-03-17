@@ -1,11 +1,13 @@
 import React from 'react'
-import alkitabLogo from "../../public/images/alkitabLogo.png"
+import alkitabLogo from "../assets/images/alkitabLogo.png"
 
 function LoadingPage() {
   return (
     <div className='flex flex-col justify-center items-center text-center h-screen space-y-10'>
         <img className='h-fit w-1/2' src={alkitabLogo} alt="alkitab logo" />
-        <h1 className='text-5xl font-bold'>الكتاب</h1>
+        <h1 className='text-2xl font-bold'>قال النبي صلى الله عليه وسلم
+((مَن يُرِدِ الله به خيرًا يفقِّهْه في الدِّين، وإنما أنا قاسمٌ والله يعطي، ولن تزال هذه الأمة قائمةً على أمر الله، لا يضرُّهم مَن خالفهم حتى يأتي أمر الله)).
+رواه البخاري</h1>
         <div >
   <button type="button" class="flex items-center rounded-lg px-4 py-2 text-white" disabled>
     <svg className="mr-3 h-20 w-20 animate-spin text-yellow-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

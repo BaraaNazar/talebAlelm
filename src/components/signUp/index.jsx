@@ -1,6 +1,6 @@
 import React from 'react'
-import bookshelf from "../../../public/images/laptop-computer-book-workplace-library-room.jpg"
-import googleLogo from "../../../public/images/logo_google_g_icon.svg"
+import bookshelf from "../../assets/images/laptop-computer-book-workplace-library-room.jpg"
+import googleLogo from "../../assets/images/logo_google_g_icon.svg"
 
 function Index() {
   return (
@@ -11,8 +11,8 @@ function Index() {
       <img className='object-cover h-full w-full rounded' src={bookshelf} alt="bookshelf" />
         </div>
       <div className='p-5 space-y-5'>
-            <h1 className='text-4xl font-bold'>
-            <span> 👋 </span>أهلا بكم في برنامج <span className='text-yellow-500'>الكتاب</span>
+            <h1 className='text-3xl font-bold'>
+            <span> 👋 </span>أهلا بكم في برنامج <span className='text-yellow-500'>طالب العلم</span>
             </h1>
             <p>افضل منصة لطلب العلم, بامكانك القراءة ومتابعة ما تتعلمه عن طريق حسابك الخاص</p>
         </div>
