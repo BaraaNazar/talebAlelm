@@ -1,6 +1,6 @@
 import React from 'react'
 import Quran from './quran'
-import SingleBook from './singlebook'
+import SingleBook from './SingleBook'
 import alkitabLogo from "../../assets/images/alkitabLogo.png"
 import notificationBell from "../../assets/images/notification-bell-svgrepo-com.svg"
 import tatheralsameh from '../../assets/images/Tathkraalsameh.webp';
