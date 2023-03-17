@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Home from './containers/Home'
 import LoadingPage from './containers/LoadingPage'
 import SignUp from './containers/SignUp'
 
@@ -9,6 +10,7 @@ function App() {
     <div>
       <LoadingPage/>
       <SignUp/>
+      <Home/>
     </div>
   )
 }
