@@ -1,17 +1,17 @@
-import { useState } from 'react'
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
 import Home from './containers/Home'
 import LoadingPage from './containers/LoadingPage'
 import SignUp from './containers/SignUp'
 
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>
-      <LoadingPage/>
-      <SignUp/>
-      <Home/>
-    </div>
+    <Routes>
+      <Route path='/' element={<SignUp/>}></Route>
+      <Route path='/Home' element={<Home/>}></Route>
+    </Routes>
   )
 }
 

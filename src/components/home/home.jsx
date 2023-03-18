@@ -8,12 +8,14 @@ import kitabAlelm from "../../assets/images/kitabAlelm.jpg"
 import alelmWfathlih from "../../assets/images/alelmWfathlih.webp"
 import huliaTablibAlem from "../../assets/images/huliaTablibAlem.jpg"
 import ExploreBysection from './exploreBysection';
+import NavBar from './navBar'
 
 
 
 function Home() {
   return (
     <div>
+      <NavBar/>
       <div className='flex p-2 justify-between'>
       <img className='h-fit w-10' src={alkitabLogo} alt="alkitab logo" />
             <div className='flex justify-end'>
@@ -73,6 +75,9 @@ function Home() {
   <ExploreBysection name={"تفسير"} link={"https://2.bp.blogspot.com/-KxSuBA8tq1Q/W8GfDS11r6I/AAAAAAAAAKI/NrQgYqUPvHkvSIwAs0AzJnAchM5Mdh8WgCLcBGAs/s1600/%25D9%2585%25D9%2583%25D8%25AA%25D8%25A8%25D8%25A9.png"}/>
   <ExploreBysection name={"كتب عامة"} link={"https://alkafeel.net/news/images/main/931787644b166c7c02551d2052857904.jpg"}/>
   </div>
+</div>
+<div className='h-20'>
+
 </div>
     </div>
     )
