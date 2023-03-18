@@ -7,6 +7,8 @@ import tatheralsameh from '../../assets/images/Tathkraalsameh.webp';
 import kitabAlelm from "../../assets/images/kitabAlelm.jpg"
 import alelmWfathlih from "../../assets/images/alelmWfathlih.webp"
 import huliaTablibAlem from "../../assets/images/huliaTablibAlem.jpg"
+import ExploreBysection from './exploreBysection';
+
 
 
 function Home() {
@@ -60,6 +62,17 @@ function Home() {
   <SingleBook src={kitabAlelm} name={" كتاب العلم"} pageNumber={"عدد الصفحات: ٢٠٦ص"} author={"المؤلف: محمد بن صالح العثيمين"} link={"https://www.arab-books.com/wp-content/uploads/2021/01/Noor-Book.comD983D8AAD8A7D8A8D8A7D984D8B9D984D9852.pdf"}/>
   <SingleBook src={alelmWfathlih} name={" جامع بيان العلم وفضله"} pageNumber={"عدد الصفحات: ١٥٤٨ص"} author={"المؤلف: أبو عمر يوسف بن عبد الله النمري المعروف بابن عبد البر"} link={"https://upload.wikimedia.org/wikisource/ar/7/73/جامع_بيان_العلم_وفضله.pdf"}/>
   <SingleBook src={huliaTablibAlem} name={"  شرح حلية طالب العلم"} pageNumber={"عدد الصفحات: ٣٩٧ص"} author={"المؤلف: محمد بن صالح العثيمين"} link={"https://d1.islamhouse.com/data/ar/ih_books/single_010/ar_Shr7_7leet_talb_Al3lm.pdf"}/>
+</div>
+<div className='text-right space-y-5'>
+  <h1 className='text-3xl font-bold pr-2'>:التصنيف من خلال الاقسام</h1>
+  <div className='overflow-auto flex'>
+  <ExploreBysection name={"العقيدة"} link={"https://kitabat.blog/static/uploads/contents/15967358561d4916273ab0c666806a03b5533728e5.jpg"}/>
+  <ExploreBysection name={"الحديث"} link={"https://www.gph.gov.sa/media/k2/items/cache/79a0d6a4899b79994a919b2a20690507_XL.jpg?t=20210913_094636"}/>
+  <ExploreBysection name={"الفقه"} link={"https://clcdn.spa.gov.sa/image-resizer/h600/galupload/normal/201611/000-749611381479464463169.jpg"}/>
+  <ExploreBysection name={"الفرائض"} link={"https://www.wmn.gov.sa/public/photos/80296519.jpg"}/>
+  <ExploreBysection name={"تفسير"} link={"https://2.bp.blogspot.com/-KxSuBA8tq1Q/W8GfDS11r6I/AAAAAAAAAKI/NrQgYqUPvHkvSIwAs0AzJnAchM5Mdh8WgCLcBGAs/s1600/%25D9%2585%25D9%2583%25D8%25AA%25D8%25A8%25D8%25A9.png"}/>
+  <ExploreBysection name={"كتب عامة"} link={"https://alkafeel.net/news/images/main/931787644b166c7c02551d2052857904.jpg"}/>
+  </div>
 </div>
     </div>
     )

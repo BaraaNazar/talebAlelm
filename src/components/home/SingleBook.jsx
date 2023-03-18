@@ -4,12 +4,15 @@ function SingleBook({src, name, pageNumber, author, link}) {
   return (
     <div className='w-screen m-3 text-right'>
 
-<div className="w-full h-fit bg-gray-100 flex justify-center items-center">
-  <div className="container flex justify-center">
-    <div className="w-full">
-      <div className="bg-white relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg">
-        <img className="rounded-t-lg h-96 w-full" src={src} alt="bookImg" />
-        <div className="py-6 px-8 h-60 rounded-lg bg-white flex flex-col justify-end">
+<div className="lg:w-full lg:h-fit bg-gray-100 flex justify-center items-center">
+  <div className="container flex justify-center flex-wrap">
+    <div className="lg:w-full">
+      <div className="bg-white relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg ">
+        <div className='justify-center items-center text-center flex flex-wrap'>
+
+        <img className="rounded-t-lg w-72 h-fit" src={src} alt="bookImg" />
+        </div>
+        <div className="py-6 px-8 rounded-lg bg-white flex flex-col justify-end w-72 h-60">
           <h1 className="text-gray-700 font-bold text-2xl mb-3 hover:text-gray-900 hover:cursor-pointer ">{name}</h1>
           <p className="text-gray-700 tracking-wide">{author}</p>
           <p className="text-gray-700 tracking-wide">{pageNumber}</p>
