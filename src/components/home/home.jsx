@@ -59,11 +59,14 @@ function Home() {
 
       </div>
 <Quran/>
+<div className='text-center space-y-5'>
+<h1 className='text-3xl font-bold pr-2'>:كتب في بداية طلب العلم</h1>
 <div className='flex overflow-auto'>
   <SingleBook src={tatheralsameh} name={" تذكرة السامع والمتكلم في أدب العالم والمتعلم"} pageNumber={"عدد الصفحات: ٢١٥ص"} author={"المؤلف: القاضي بدر الدين ابن جماعة"} link={"https://www.almeshkat.net/books/archive/books/137603.pdf"}/>
   <SingleBook src={kitabAlelm} name={" كتاب العلم"} pageNumber={"عدد الصفحات: ٢٠٦ص"} author={"المؤلف: محمد بن صالح العثيمين"} link={"https://www.arab-books.com/wp-content/uploads/2021/01/Noor-Book.comD983D8AAD8A7D8A8D8A7D984D8B9D984D9852.pdf"}/>
   <SingleBook src={alelmWfathlih} name={" جامع بيان العلم وفضله"} pageNumber={"عدد الصفحات: ١٥٤٨ص"} author={"المؤلف: أبو عمر يوسف بن عبد الله النمري المعروف بابن عبد البر"} link={"https://upload.wikimedia.org/wikisource/ar/7/73/جامع_بيان_العلم_وفضله.pdf"}/>
   <SingleBook src={huliaTablibAlem} name={"  شرح حلية طالب العلم"} pageNumber={"عدد الصفحات: ٣٩٧ص"} author={"المؤلف: محمد بن صالح العثيمين"} link={"https://d1.islamhouse.com/data/ar/ih_books/single_010/ar_Shr7_7leet_talb_Al3lm.pdf"}/>
+</div>
 </div>
 <div className='text-right space-y-5'>
   <h1 className='text-3xl font-bold pr-2'>:التصنيف من خلال الاقسام</h1>
