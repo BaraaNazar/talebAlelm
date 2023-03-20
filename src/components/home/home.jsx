@@ -17,7 +17,7 @@ function Home() {
     <div>
       <NavBar/>
       <div className='flex p-2 justify-between'>
-      <img className='h-fit w-10' src={alkitabLogo} alt="alkitab logo" />
+      <img className='h-10 w-10' src={alkitabLogo} alt="alkitab logo" />
             <div className='flex justify-end'>
         <div className="flex">
   <div className="">

@@ -7,8 +7,8 @@ function Index() {
   return (
     <div>
       <div className='flex flex-col text-center h-screen '>
-        <div className='h-1/2'>
-          <div class="absolute bg-gradient-to-t from-white  w-full h-1/2 opacity-100"></div>
+        <div className='relative h-1/2'>
+          <div class="absolute bg-gradient-to-t from-white  w-full h-full opacity-100"></div>
       <img className='object-cover h-full w-full rounded' src={bookshelf} alt="bookshelf" />
         </div>
       <div className='p-5 space-y-5'>
