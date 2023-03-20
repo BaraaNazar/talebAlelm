@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function SingleBook({src, name, pageNumber, author, link}) {
   return (
@@ -9,8 +10,9 @@ function SingleBook({src, name, pageNumber, author, link}) {
     <div className="lg:w-full">
       <div className="bg-white relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg ">
         <div className='justify-center items-center text-center flex flex-wrap'>
-
+        <Link to="/BookProfile">
         <img className="rounded-t-lg w-72 h-fit" src={src} alt="bookImg" />
+        </Link>
         </div>
         <div className="py-6 px-8 rounded-lg bg-white flex flex-col justify-end w-72 h-60">
           <h1 className="text-gray-700 font-bold text-2xl mb-3 hover:text-gray-900 hover:cursor-pointer ">{name}</h1>
