@@ -1,7 +1,7 @@
 import React from "react";
-import googleLogo from "../../assets/images/logo_google_g_icon.svg";
-import facebookLogo from "../../assets/images/facebook.svg";
-import leftArrow from "../../assets/images/left-arrow-svgrepo-com.svg";
+import googleLogo from "../../../public/images/logo_google_g_icon.svg";
+import facebookLogo from "../../../public/images/facebook.svg";
+import leftArrow from "../../../public/images/left-arrow-svgrepo-com.svg";
 import Image from 'next/image'
 import Link from 'next/link'
 
