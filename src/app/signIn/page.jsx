@@ -9,12 +9,13 @@ function SignIn() {
   return (
     <div>
       <section class="relative bg-white overflow-hidden">
-        <Link to="/Home">
+        <Link to="/home">
           <Image
             class="absolute lg:left-20 lg:top-20 transition left-5 top-2 lg:h-10 lg:w-10 h-8 w-8 cursor-pointer z-20"
             src={leftArrow}
             alt=""
             width="100"
+            height="100"
           />
         </Link>
         <div class="relative z-10 flex justify-center flex-wrap -m-8">
@@ -83,6 +84,7 @@ function SignIn() {
                     <button class="flex items-center p-4 bg-white hover:bg-gray-50 border rounded-lg transition ease-in-out duration-200">
                       <Image class="mr-3 h-10 w-10" src={googleLogo} alt=""
                         width="100"
+                        height="100"
                       />
                       <span class="font-semibold leading-normal">
                         سجل مع حساب كوكل
@@ -93,6 +95,7 @@ function SignIn() {
                     <button class="flex items-center p-4 bg-white hover:bg-gray-50 border rounded-lg transition ease-in-out duration-200">
                       <Image class="mr-3 h-10 w-10" src={facebookLogo} alt=""
                         width="100"
+                        height="100"
                                       />
                       <span class="font-semibold leading-normal">
                         سجل مع حساب فيسبوك
