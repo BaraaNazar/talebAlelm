@@ -1,12 +1,11 @@
-import React from 'react'
-import Index from '../components/signUp/index.jsx'
+import React from "react";
+import Index from "../components/signUp/index.jsx";
 function SignUp() {
   return (
     <div>
-        <Index/>
+      <Index />
     </div>
-  )
+  );
 }
 
-
-export default SignUp
+export default SignUp;
