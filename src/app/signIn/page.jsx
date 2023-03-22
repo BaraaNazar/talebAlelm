@@ -9,7 +9,7 @@ function SignIn() {
   return (
     <div>
       <section class="relative bg-white overflow-hidden">
-        <Link to="/home">
+        <Link href="/home">
           <Image
             class="absolute lg:left-20 lg:top-20 transition left-5 top-2 lg:h-10 lg:w-10 h-8 w-8 cursor-pointer z-20"
             src={leftArrow}
