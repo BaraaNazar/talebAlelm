@@ -11,6 +11,7 @@ const nextConfig = {
       'upload.wikimedia.org',
       'media.licdn.com',
       'lh3.googleusercontent.com',
+      'www.sifatusafwa.com',
     ],
   },
   experimental: {
