@@ -12,6 +12,13 @@ const nextConfig = {
       'media.licdn.com',
       'lh3.googleusercontent.com',
       'www.sifatusafwa.com',
+      'www.noor-book.com',
+      'cdn.shopify.com',
+      'cdn.salla.sa',
+      'www.risele.com.tr',
+      'safinatulnajat.com',
+      'www.neelwafurat.com',
+      'www.daribnhazm.com',
     ],
   },
   experimental: {
