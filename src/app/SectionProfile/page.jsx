@@ -1,10 +1,28 @@
+'use client';
 import React from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { database } from '../../../services/firebaseConfig';
+import { collection, onSnapshot } from 'firebase/firestore';
 import leftArrow from '../../../public/images/left-arrow-svgrepo-com.svg';
 import notificationBell from '../../../public/images/notification.png';
+import BookProfile from './BookProfile';
 
 function SectionProfile() {
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    const unsubscribe = onSnapshot(
+      collection(database, `books`),
+      (snapshot) => {
+        setBooks(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      }
+    );
+
+    return unsubscribe;
+  }, []);
+
   return (
     <div>
       <div className='flex flex-row items-center justify-between w-screen'>
@@ -38,9 +56,9 @@ function SectionProfile() {
                 className='h-8 w-8 text-black'
               >
                 <path
-                  fill-rule='evenodd'
+                  fillRule='evenodd'
                   d='M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z'
-                  clip-rule='evenodd'
+                  clipRule='evenodd'
                 />
               </svg>
             </span>
@@ -63,118 +81,18 @@ function SectionProfile() {
           </div>
         </div>
       </div>
-      <div className='p-5 space-y-5 text-right w-screen flex flex-col items-end justify-center'>
-        <a
-          href='#'
-          className='flex flex-col items-center bg-white  rounded-lg  md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700'
-        >
-          <div className='flex flex-col justify-between p-4 leading-normal space-y-2'>
-            <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
-              كتاب ( فتح الباري شرح صحيح البخاري )
-            </h5>
-            <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>
-              {' '}
-              فتح الباري بشرح صحيح البخاري ألفه الحافظ ابن حجر العسقلاني وهو من
-              كتب تفسير الحديث وأجمعها في شرح صحيح البخاري. وهو أهم كتب ابن حجر
-              أخذ في جمعه وتأليفه وإملائه وتنقيحه أكثر من خمس وعشرين سنة، حيث
-              ابتدأه في أوائل سنة 817هـ، وعمره آنذاك 44 سنة، وفرغ منه في غرة رجب
-              من سنة 842هـ فجمع فيه شروح من قبله على صحيح البخاري، باسطاً فيه
-              إيضاح الصحيح وبيان مشكلاته، وحكاية مسائل الإجماع، وبسط الخلاف في
-              الفقه والتصحيح والتضعيف واللغة والقراءات، مع العناية الواضحة بضبط
-              صحيح البخاري ورواياته والتنويه على الفروق فيها، حتى زادت موارد
-              الحافظ فيه على (1200) كتاباً من مؤلفات السابقين له
-            </p>
-            <div className='space-x-2'>
-              <button className='mt-6 py-2 px-4 bg-yellow-400 text-gray-800 font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300'>
-                عقيدة
-              </button>
-              <button className='mt-6 py-2 px-4 bg-yellow-400 text-gray-800 font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300'>
-                أساسيات
-              </button>
-            </div>
-          </div>
-          <Image
-            className='object-contain w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg'
-            src='https://upload.wikimedia.org/wikipedia/ar/c/c6/Fatholbari.jpg'
-            alt=''
-            width='100'
-            height='100'
+      <div className='grid lg:grid-cols-2 grid-cols-1 items-center justify-center gap-2 p-5 text-right'>
+        {books.map((book, i) => (
+          <BookProfile
+            Bookname={book.title}
+            Bookauthor={book.author}
+            Bookpages={book.pages}
+            Bookdescription={book.description}
+            Bookimage={book.cover}
+            Bookcategory={book.genre}
+            key={i}
           />
-        </a>
-        <a
-          href='#'
-          className='flex flex-col items-center bg-white  rounded-lg  md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700'
-        >
-          <div className='flex flex-col justify-between p-4 leading-normal space-y-2'>
-            <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
-              كتاب ( فتح الباري شرح صحيح البخاري )
-            </h5>
-            <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>
-              {' '}
-              فتح الباري بشرح صحيح البخاري ألفه الحافظ ابن حجر العسقلاني وهو من
-              كتب تفسير الحديث وأجمعها في شرح صحيح البخاري. وهو أهم كتب ابن حجر
-              أخذ في جمعه وتأليفه وإملائه وتنقيحه أكثر من خمس وعشرين سنة، حيث
-              ابتدأه في أوائل سنة 817هـ، وعمره آنذاك 44 سنة، وفرغ منه في غرة رجب
-              من سنة 842هـ فجمع فيه شروح من قبله على صحيح البخاري، باسطاً فيه
-              إيضاح الصحيح وبيان مشكلاته، وحكاية مسائل الإجماع، وبسط الخلاف في
-              الفقه والتصحيح والتضعيف واللغة والقراءات، مع العناية الواضحة بضبط
-              صحيح البخاري ورواياته والتنويه على الفروق فيها، حتى زادت موارد
-              الحافظ فيه على (1200) كتاباً من مؤلفات السابقين له
-            </p>
-            <div className='space-x-2'>
-              <button className='mt-6 py-2 px-4 bg-yellow-400 text-gray-800 font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300'>
-                عقيدة
-              </button>
-              <button className='mt-6 py-2 px-4 bg-yellow-400 text-gray-800 font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300'>
-                أساسيات
-              </button>
-            </div>
-          </div>
-          <Image
-            className='object-contain w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg'
-            src='https://upload.wikimedia.org/wikipedia/ar/c/c6/Fatholbari.jpg'
-            alt=''
-            width='100'
-            height='100'
-          />
-        </a>
-        <a
-          href='#'
-          className='flex flex-col items-center bg-white  rounded-lg  md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700'
-        >
-          <div className='flex flex-col justify-between p-4 leading-normal space-y-2'>
-            <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
-              كتاب ( فتح الباري شرح صحيح البخاري )
-            </h5>
-            <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>
-              {' '}
-              فتح الباري بشرح صحيح البخاري ألفه الحافظ ابن حجر العسقلاني وهو من
-              كتب تفسير الحديث وأجمعها في شرح صحيح البخاري. وهو أهم كتب ابن حجر
-              أخذ في جمعه وتأليفه وإملائه وتنقيحه أكثر من خمس وعشرين سنة، حيث
-              ابتدأه في أوائل سنة 817هـ، وعمره آنذاك 44 سنة، وفرغ منه في غرة رجب
-              من سنة 842هـ فجمع فيه شروح من قبله على صحيح البخاري، باسطاً فيه
-              إيضاح الصحيح وبيان مشكلاته، وحكاية مسائل الإجماع، وبسط الخلاف في
-              الفقه والتصحيح والتضعيف واللغة والقراءات، مع العناية الواضحة بضبط
-              صحيح البخاري ورواياته والتنويه على الفروق فيها، حتى زادت موارد
-              الحافظ فيه على (1200) كتاباً من مؤلفات السابقين له
-            </p>
-            <div className='space-x-2'>
-              <button className='mt-6 py-2 px-4 bg-yellow-400 text-gray-800 font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300'>
-                عقيدة
-              </button>
-              <button className='mt-6 py-2 px-4 bg-yellow-400 text-gray-800 font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300'>
-                أساسيات
-              </button>
-            </div>
-          </div>
-          <Image
-            className='object-contain w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg'
-            src='https://upload.wikimedia.org/wikipedia/ar/c/c6/Fatholbari.jpg'
-            alt=''
-            width='100'
-            height='100'
-          />
-        </a>
+        ))}
       </div>
     </div>
   );
