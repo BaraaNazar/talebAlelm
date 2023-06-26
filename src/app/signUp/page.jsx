@@ -7,6 +7,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import Link from 'next/link';
 import Image from 'next/image';
 import googleLogo from '../../../public/images/logo_google_g_icon.svg';
+import Mekka from '../../../public/images/Mekka.jpeg';
 
 function Index() {
   const [user, loading] = useAuthState(auth);
@@ -30,9 +31,17 @@ function Index() {
   return (
     <div>
       <div className='flex flex-col text-center '>
-        <h1 className='text-8xl p-10'>
-          وَمَنْ يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ
-        </h1>
+        <div className='flex flex-col w-screen justify-center items-center'>
+          <Image
+            src={Mekka}
+            height={500}
+            width={500}
+            className='w-80 rounded'
+          />
+          <h1 className='text-sm p-10'>
+            وَمَنْ يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ
+          </h1>
+        </div>
         <div className='p-5 space-y-2'>
           <div className='flex space-x-3 justify-center'>
             <h1 className='text-yellow-500 text-3xl font-bold'>طالب العلم</h1>
