@@ -20,6 +20,7 @@ const nextConfig = {
       'www.neelwafurat.com',
       'www.daribnhazm.com',
       'books.islamway.net',
+      'quran.tareq.tk',
     ],
   },
   experimental: {

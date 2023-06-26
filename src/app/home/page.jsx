@@ -86,7 +86,7 @@ function Home() {
       <Quran />
       <div className='text-center space-y-5'>
         <h1 className='text-3xl font-bold pr-2'>:كتب في بداية طلب العلم</h1>
-        <div className='flex overflow-auto'>
+        <div className='lg:flex lg:overflow-auto grid grid-cols-1 gap-2 w-screen justify-center items-center'>
           <SingleBook
             src={tatheralsameh}
             name={' تذكرة السامع والمتكلم في أدب العالم والمتعلم'}

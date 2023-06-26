@@ -23,10 +23,11 @@ function Quran() {
             </p>
           </div>
           <Image
-            className='lg:h-96 lg:w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-l-lg'
+            className='rounded-t-lg'
             src={quarn}
             alt=''
-            width='100'
+            width={500}
+            height={500}
           />
         </div>
       </div>
