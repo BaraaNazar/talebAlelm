@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import ExploreBysection from '../home/ExploreBysection';
+import ExploreBysection from '../../../src/app/home/exploreBysection';
 
 function Sections() {
   return (
