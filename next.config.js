@@ -19,6 +19,7 @@ const nextConfig = {
       'safinatulnajat.com',
       'www.neelwafurat.com',
       'www.daribnhazm.com',
+      'books.islamway.net',
     ],
   },
   experimental: {
