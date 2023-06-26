@@ -23,6 +23,7 @@ function SectionProfile({ sectionName, sectionDescription }) {
     return unsubscribe;
   }, []);
 
+  const filteredBooks = books.filter((book) => book.genre === sectionName);
   return (
     <div>
       <div className='flex flex-row items-center justify-between w-screen p-5'>
@@ -40,7 +41,7 @@ function SectionProfile({ sectionName, sectionDescription }) {
         </div>
       </div>
       <div className='grid lg:grid-cols-2 grid-cols-1 items-center justify-center gap-2 p-5 text-right'>
-        {books.map((book, i) => (
+        {filteredBooks.map((book, i) => (
           <BookProfile
             Bookname={book.title}
             Bookauthor={book.author}
