@@ -1,7 +1,15 @@
+'use client';
 import React from 'react';
+import { auth } from '../../../services/firebaseConfig';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import Link from 'next/link';
 
 function NavBar() {
+  const [user, loading] = useAuthState(auth);
+
+  if (!user) {
+    return <div></div>;
+  }
   return (
     <div className='pt-10'>
       {/* <!-- component --> */}
