@@ -3,13 +3,13 @@ import Link from 'next/link';
 
 function NavBar() {
   return (
-    <div>
+    <div className='pt-10'>
       {/* <!-- component --> */}
       <div>
         {/* <!-- <section id="bottom-navigation" class="md:hidden block fixed inset-x-0 bottom-0 z-10 bg-white shadow"> // if shown only tablet/mobile--> */}
         <section
           id='bottom-navigation'
-          className='block fixed inset-x-0 bottom-0 z-10 bg-white shadow'
+          className='block fixed inset-x-0 bottom-0 z-10 shadow backdrop-blur-3xl '
         >
           <div id='tabs' className='flex justify-between'>
             <Link

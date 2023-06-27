@@ -15,8 +15,7 @@ import kitabAlelm from '../../../public/images/kitabAlelm.jpg';
 import alelmWfathlih from '../../../public/images/alelmWfathlih.webp';
 import huliaTablibAlem from '../../../public/images/huliaTablibAlem.jpg';
 import ExploreBysection from './exploreBysection';
-import NavBar from './navBar';
-import { getAuth } from 'firebase/auth';
+import ToggleDarkMode from '../ToggleDarkMode/ToggleDarkMode';
 
 function Home() {
   const [user, loading] = useAuthState(auth);
@@ -37,15 +36,8 @@ function Home() {
 
   return (
     <div>
-      <NavBar />
       <div className='flex p-2 justify-between'>
-        <Image
-          className='h-10 w-10'
-          src={alkitabLogo}
-          alt='alkitab logo'
-          objectFit='cover'
-          width='100'
-        />
+        <ToggleDarkMode />
         <div className='flex justify-end items-center'>
           <div className='relative flex w-fit items-center justify-center space-x-3'>
             <div className='absolute z-10 rounded-full bg-pink-700 p-2 text-xs hidden'></div>
@@ -68,14 +60,14 @@ function Home() {
                 />
               </Link>
               <div className='p-5'>
-                <h5 className='mb-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white'>
+                <h5 className='mb-2 text-sm font-bold tracking-tight '>
                   {user.displayName}
                 </h5>
               </div>
               <button
                 type='button'
                 onClick={() => auth.signOut()}
-                className='inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+                className='inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300'
               >
                 Sign Out
               </button>

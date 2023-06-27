@@ -6,17 +6,17 @@ import Image from 'next/image';
 
 function Quran() {
   return (
-    <div className='h-full m-10 '>
+    <div className='h-full m-10'>
       <div className='flex justify-center text-right'>
-        <div className='flex flex-col rounded-lg bg-white shadow-lg  md:max-w-xl md:flex-row'>
-          <div className='flex flex-col justify-start p-6'>
-            <h5 className='text-neutral-800 font-bold text-2xl mb-3 hover:text-gray-900 hover:cursor-pointer '>
+        <div className='flex flex-col rounded-lg shadow-lg  md:max-w-xl md:flex-row'>
+          <div className='flex flex-col justify-start p-6 hover:shadow-sm transition duration-300 hover:shadow-white'>
+            <h5 className=' font-bold text-2xl mb-3 hover:cursor-pointer '>
               القرآن
             </h5>
-            <p className='mb-4 text-base text-neutral-600 '>
+            <p className='mb-4 text-base '>
               القران هو كتاب الله واساس العلوم والجامع لاصولها
             </p>
-            <p className='mb-4 text-base text-neutral-600 '>
+            <p className='mb-4 text-base '>
               قال النبي صلى الله عليه وسلم : يقالُ لصاحِبِ القرآنِ اقرَأ وارقَ
               ورتِّل كما كُنتَ ترتِّلُ في الدُّنيا فإنَّ منزلتَكَ عندَ آخرِ آيةٍ
               تقرؤُها

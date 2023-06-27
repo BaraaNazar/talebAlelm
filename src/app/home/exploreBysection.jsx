@@ -6,7 +6,7 @@ function ExploreBysection({ name, link, section }) {
   return (
     <div>
       <Link href={section}>
-        <div class='relative rounded-lg shadow-lg cursor-pointer m-2 w-72'>
+        <div class='relative rounded-lg shadow-lg cursor-pointer m-2 w-72 hover:shadow-sm transition duration-300 hover:shadow-white'>
           <Image
             class='w-full h-48 rounded-md'
             src={link}
