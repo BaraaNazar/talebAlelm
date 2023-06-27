@@ -56,7 +56,7 @@ function Index() {
           <button
             onClick={login}
             type='button'
-            className='text-black flex  hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-full px-5 py-2.5 text-center justify-center items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2 w-72 border-stone-100 border-2'
+            className=' flex  hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-full px-5 py-2.5 text-center justify-center items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2 w-72 border-stone-100 border-2'
           >
             <Image
               className='w-6 h-6 mr-2 -ml-1'
@@ -68,7 +68,7 @@ function Index() {
           </button>
           <Link
             href='/home'
-            className='text-white bg-yellow-500   hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-full px-5 py-2.5 text-center justify-center items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2 w-72'
+            className=' bg-yellow-500   hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-full px-5 py-2.5 text-center justify-center items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2 w-72'
           >
             من نحن؟
           </Link>
