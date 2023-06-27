@@ -36,7 +36,7 @@ function ToggleDarkMode() {
           >
             {theme === 'dark' ? (
               <Image
-                className='w-5 h-5'
+                className='w-12 h-12'
                 src={sun}
                 alt='logo'
                 height='50px'
@@ -44,7 +44,7 @@ function ToggleDarkMode() {
               />
             ) : (
               <Image
-                className='w-5 h-5'
+                className='w-10 h-10'
                 src={moon}
                 alt='logo'
                 height='50px'
