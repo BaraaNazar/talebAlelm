@@ -26,7 +26,7 @@ function SectionProfile({ sectionName, sectionDescription }) {
   const filteredBooks = books.filter((book) => book.genre === sectionName);
   return (
     <div>
-      <div className='flex flex-row items-center justify-between w-screen p-5'>
+      <div className='flex flex-row items-center justify-between w-screen p-5 '>
         <div className='lg:w-52'>
           <Link
             className='mt-6 py-2 px-4 bg-yellow-400 text-gray-800 font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300'

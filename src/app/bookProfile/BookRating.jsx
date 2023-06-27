@@ -6,13 +6,10 @@ function BookRating() {
     <div className='w-screen p-5 flex justify-end text-right'>
       <article className='w-1/2'>
         <div className='flex items-center justify-end mb-4 space-x-4 '>
-          <div className='space-y-1 font-medium dark:text-white'>
+          <div className='space-y-1 font-medium'>
             <p>
               براء نزار{' '}
-              <time
-                datetime='2014-08-16 19:00'
-                className='block text-sm text-gray-500 dark:text-gray-400'
-              >
+              <time datetime='2014-08-16 19:00' className='block text-sm'>
                 انظم في 2023/3/20
               </time>
             </p>
@@ -76,39 +73,35 @@ function BookRating() {
             <title>Fifth star</title>
             <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z'></path>
           </svg>
-          <h3 className='ml-2 text-sm font-semibold text-gray-900 dark:text-white'>
-            كتاب مهم لطالب العلم
-          </h3>
+          <h3 className='ml-2 text-sm font-semibold'>كتاب مهم لطالب العلم</h3>
         </div>
-        <footer className='mb-5 text-sm text-gray-500 dark:text-gray-400'>
+        <footer className='mb-5 text-sm'>
           <p>
             تم التقييم في تاريخ{' '}
             <time datetime='2017-03-03 19:00'>2023/3/20</time>
           </p>
         </footer>
-        <p className='mb-2 font-light text-gray-500 dark:text-gray-400'>
+        <p className='mb-2 font-light'>
           كتاب مهم لكل طالب علم يجب الحفاظ على مراجعته وتخصيص ورد يومي له
         </p>
         <a
           href='#'
-          className='block mb-5 text-sm font-medium text-blue-600 hover:underline dark:text-blue-500'
+          className='block mb-5 text-sm font-medium text-blue-600 hover:underline '
         >
           اقرأ اكثر
         </a>
         <aside>
-          <p className='mt-1 text-xs text-gray-500 dark:text-gray-400'>
-            19 شخص وجدوه مفيد
-          </p>
-          <div className='flex justify-end items-center mt-3 space-x-3 divide-x divide-gray-200 dark:divide-gray-600'>
+          <p className='mt-1 text-xs text-gray-500'>19 شخص وجدوه مفيد</p>
+          <div className='flex justify-end items-center mt-3 space-x-3 divide-x divide-gray-200 '>
             <a
               href='#'
-              className='text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-xs px-2 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700'
+              className=' border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-xs px-2 py-1.5'
             >
               نافع ومفيد
             </a>
             <a
               href='#'
-              className='pl-4 text-sm font-medium text-blue-600 hover:underline dark:text-blue-500'
+              className='pl-4 text-sm font-medium text-blue-600 hover:underline'
             >
               تقرير كغير مفيد
             </a>
