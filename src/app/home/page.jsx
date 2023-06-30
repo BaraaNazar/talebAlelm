@@ -8,7 +8,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Quran from './quran';
 import SingleBook from './SingleBook';
-import alkitabLogo from '../../../public/images/alkitabLogo.png';
 import notificationBell from '../../../public/images/notification.png';
 import tatheralsameh from '../../../public/images/Tathkraalsameh.webp';
 import kitabAlelm from '../../../public/images/kitabAlelm.jpg';
