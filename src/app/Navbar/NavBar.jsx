@@ -220,7 +220,7 @@ function NavBar() {
               <span className='tab tab-whishlist block text-xs'>اطلب مادة</span>
             </Link>
             <Link
-              href=''
+              href='/UserProfile'
               class='w-full focus:text-yellow-500 hover:text-yellow-500 justify-center inline-block text-center pt-2 pb-1'
             >
               <svg
