@@ -3,6 +3,7 @@ import NavBar from '../Navbar/NavBar';
 import BookDetails from './BookDetails';
 import BookRating from './BookRating';
 import ChaptersCheckList from './ChaptersCheckList';
+import BookProfileprogress from './BookProfileprogress';
 
 function BookProfile() {
   return (
@@ -13,6 +14,10 @@ function BookProfile() {
         </div>
         <div>
           <ChaptersCheckList />
+          <BookProfileprogress
+            progressPercentage={`45%`}
+            progressWidth={`45%`}
+          />
         </div>
       </div>
       <div>

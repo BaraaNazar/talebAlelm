@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import BookProfileprogress from '../bookProfile/BookProfileprogress';
 
 function BookProfile({
   Bookname,
@@ -30,6 +31,7 @@ function BookProfile({
             أساسيات
           </button>
         </div>
+        <BookProfileprogress progressPercentage={`45%`} progressWidth={`45%`} />
       </div>
       <Image
         className='object-contain w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg'
