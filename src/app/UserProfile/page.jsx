@@ -15,20 +15,20 @@ function UserProfile() {
   }
   return (
     <div className='pb-24'>
-      <div className='p-8 bg-white shadow mt-24'>
+      <div className='p-8  shadow mt-24'>
         <div className='grid grid-cols-1 md:grid-cols-3'>
           <div className='grid grid-cols-3 text-center order-last md:order-first mt-20 md:mt-0'>
             <div>
-              <p className='font-bold text-gray-700 text-xl'>22</p>
-              <p className='text-gray-400'>الاصدقاء</p>
+              <p className='font-bold  text-xl'>22</p>
+              <p>الاصدقاء</p>
             </div>
             <div>
-              <p className='font-bold text-gray-700 text-xl'>10</p>
-              <p className='text-gray-400'>الكتب</p>
+              <p className='font-bold  text-xl'>10</p>
+              <p>الكتب</p>
             </div>
             <div>
-              <p className='font-bold text-gray-700 text-xl'>89</p>
-              <p className='text-gray-400'>الملاحظات</p>
+              <p className='font-bold  text-xl'>89</p>
+              <p>الملاحظات</p>
             </div>
           </div>
           <div className='relative'>
@@ -53,19 +53,15 @@ function UserProfile() {
         </div>
 
         <div className='mt-20 text-center border-b pb-12'>
-          <h1 className='text-4xl font-medium text-gray-700'>
-            {user.displayName}
-          </h1>
-          <p className='font-light text-gray-600 mt-3'>
+          <h1 className='text-4xl font-medium '>{user.displayName}</h1>
+          <p className='font-light  mt-3'>
             {user.metadata.creationTime} :تاريخ الانضمام
           </p>
 
-          <p className='mt-8 text-gray-500'>{user.email}</p>
+          <p className='mt-8 '>{user.email}</p>
         </div>
         <div className='mt-12 flex flex-col justify-center'>
-          <p className='text-gray-600 text-center font-light lg:px-16'>
-            المستوى العام
-          </p>
+          <p className=' text-center font-light lg:px-16'>المستوى العام</p>
           <ProgressBar
             sectionName={'العقيدة'}
             progressWidth={`45%`}
