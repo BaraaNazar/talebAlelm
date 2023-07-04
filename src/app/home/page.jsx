@@ -3,7 +3,17 @@ import React, { useEffect } from 'react';
 import { auth } from '../../../services/firebaseConfig';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useRouter } from 'next/navigation';
-
+import {
+  collection,
+  addDoc,
+  query,
+  where,
+  getDocs,
+  doc,
+  setDoc,
+  getDoc,
+} from 'firebase/firestore';
+import { database } from '../../../services/firebaseConfig';
 import Link from 'next/link';
 import Image from 'next/image';
 import Quran from './quran';
@@ -20,8 +30,6 @@ function Home() {
   const [user, loading] = useAuthState(auth);
   const router = useRouter();
 
-  useEffect(() => console.log(user));
-
   if (loading) {
     return (
       <div className='flex justify-center items-center w-full h-screen text-4xl font-bold'>
@@ -32,6 +40,36 @@ function Home() {
   if (!user) {
     router.push('/signUp');
   }
+  const userCollection = collection(database, 'users');
+  const userDocRef = doc(userCollection, user.uid);
+
+  getDoc(userDocRef)
+    .then((docSnapshot) => {
+      if (docSnapshot.exists()) {
+        // User document already exists
+        console.log('User document already exists for this user');
+      } else {
+        // User document does not exist, so add it
+        const userData = {
+          displayName: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL,
+          uid: user.uid,
+          // Add any additional user data you want to store
+        };
+
+        setDoc(userDocRef, userData)
+          .then(() => {
+            console.log('User document created for this user');
+          })
+          .catch((error) => {
+            console.error('Error creating user document: ', error);
+          });
+      }
+    })
+    .catch((error) => {
+      console.error('Error checking user document: ', error);
+    });
 
   return (
     <div>
