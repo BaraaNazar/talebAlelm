@@ -2,8 +2,8 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { auth } from '../../../services/firebaseConfig';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import Link from 'next/link';
 import Image from 'next/image';
 import googleLogo from '../../../public/images/logo_google_g_icon.svg';

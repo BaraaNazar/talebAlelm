@@ -13,7 +13,7 @@ function Sections() {
           الرجوع
         </Link>
       </div>
-      <div className='grid lg:grid-cols-3 grid-cols-1'>
+      <div className='md:grid lg:grid-cols-3 md:grid-cols-2 flex flex-col justify-center items-center'>
         <ExploreBysection
           section={`/Aqeeda`}
           name={'العقيدة'}
