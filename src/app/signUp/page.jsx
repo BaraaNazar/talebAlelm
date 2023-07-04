@@ -28,6 +28,7 @@ function Index() {
   const login = async () => {
     const result = await signInWithPopup(auth, googleAuth);
   };
+
   return (
     <div>
       <div className='flex flex-col text-center '>
