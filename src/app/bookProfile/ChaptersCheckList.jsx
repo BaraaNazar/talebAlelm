@@ -1,139 +1,89 @@
-import React from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+import { auth } from '../../../services/firebaseConfig';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import {
+  collection,
+  doc,
+  updateDoc,
+  query,
+  where,
+  getDocs,
+} from 'firebase/firestore';
+import { database } from '../../../services/firebaseConfig';
 
 function ChaptersCheckList() {
+  const [currentProgress, setCurrentProgress] = useState(0);
+  const [user] = useAuthState(auth); // Firebase authentication state
+  const updateUserReadingProgress = async () => {
+    try {
+      const userDocRef = doc(collection(database, 'users'), user.uid);
+      await updateDoc(userDocRef, {
+        readingProgress: { currentProgress },
+      });
+      console.log('Reading progress updated successfully!');
+    } catch (error) {
+      console.error('Error updating reading progress: ', error);
+    }
+  };
+
+  const handleIncrease = () => {
+    if (currentProgress === 100) {
+      return;
+    }
+    const newProgress = currentProgress + 10;
+    setCurrentProgress(newProgress);
+    updateUserReadingProgress(); // Call the function to update Firebase data
+  };
+
+  const handleDecrease = () => {
+    if (currentProgress === 0) {
+      return;
+    }
+    const newProgress = currentProgress - 10;
+    setCurrentProgress(newProgress);
+    updateUserReadingProgress(); // Call the function to update Firebase data
+  };
+
+  useEffect(() => {
+    if (user) {
+      // Perform necessary actions when the user is available
+      updateUserReadingProgress();
+    }
+  }, [user, currentProgress]); // Trigger the effect whenever the user object or currentProgress changes
+
   return (
-    <div className='p-5 flex flex-col justify-center items-center'>
-      <h3 className='mb-4 font-semibold text-gray-900'>الفصول</h3>
-      <ul className='w-80 text-sm font-medium   border-gray-200 rounded-lg '>
-        <li className='w-full border-b border-gray-200 rounded-t-lg '>
-          <div className='flex items-center pl-3'>
-            <input
-              id='vue-checkbox'
-              type='checkbox'
-              value=''
-              className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 '
-            />
-            <label
-              for='vue-checkbox'
-              className='w-full py-3 ml-2 text-sm font-medium text-gray-900 '
-            >
-              الفصل الاول
-            </label>
-          </div>
-        </li>
-        <li className='w-full border-b border-gray-200 rounded-t-lg '>
-          <div className='flex items-center pl-3'>
-            <input
-              id='react-checkbox'
-              type='checkbox'
-              value=''
-              className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 '
-            />
-            <label
-              for='react-checkbox'
-              className='w-full py-3 ml-2 text-sm font-medium text-gray-900 '
-            >
-              الفصل الثاني
-            </label>
-          </div>
-        </li>
-        <li className='w-full border-b border-gray-200 rounded-t-lg '>
-          <div className='flex items-center pl-3'>
-            <input
-              id='angular-checkbox'
-              type='checkbox'
-              value=''
-              className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 '
-            />
-            <label
-              for='angular-checkbox'
-              className='w-full py-3 ml-2 text-sm font-medium text-gray-900'
-            >
-              الفصل الثالث
-            </label>
-          </div>
-        </li>
-        <li className='w-full border-b border-gray-200 rounded-t-lg '>
-          <div className='flex items-center pl-3'>
-            <input
-              id='laravel-checkbox'
-              type='checkbox'
-              value=''
-              className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 '
-            />
-            <label
-              for='laravel-checkbox'
-              className='w-full py-3 ml-2 text-sm font-medium text-gray-900 '
-            >
-              الفصل الرابع
-            </label>
-          </div>
-        </li>
-        <li className='w-full border-b border-gray-200 rounded-t-lg '>
-          <div className='flex items-center pl-3'>
-            <input
-              id='laravel-checkbox'
-              type='checkbox'
-              value=''
-              className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 '
-            />
-            <label
-              for='laravel-checkbox'
-              className='w-full py-3 ml-2 text-sm font-medium text-gray-900 '
-            >
-              الفصل الخامس
-            </label>
-          </div>
-        </li>
-        <li className='w-full border-b border-gray-200 rounded-t-lg '>
-          <div className='flex items-center pl-3'>
-            <input
-              id='laravel-checkbox'
-              type='checkbox'
-              value=''
-              className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 '
-            />
-            <label
-              for='laravel-checkbox'
-              className='w-full py-3 ml-2 text-sm font-medium text-gray-900 '
-            >
-              الفصل السادس
-            </label>
-          </div>
-        </li>
-        <li className='w-full border-b border-gray-200 rounded-t-lg '>
-          <div className='flex items-center pl-3'>
-            <input
-              id='laravel-checkbox'
-              type='checkbox'
-              value=''
-              className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 '
-            />
-            <label
-              for='laravel-checkbox'
-              className='w-full py-3 ml-2 text-sm font-medium text-gray-900 '
-            >
-              الفصل السابع
-            </label>
-          </div>
-        </li>
-        <li className='w-full border-b border-gray-200 rounded-t-lg '>
-          <div className='flex items-center pl-3'>
-            <input
-              id='laravel-checkbox'
-              type='checkbox'
-              value=''
-              className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 '
-            />
-            <label
-              for='laravel-checkbox'
-              className='w-full py-3 ml-2 text-sm font-medium text-gray-900 '
-            >
-              الفصل الثامن
-            </label>
-          </div>
-        </li>
-      </ul>
+    <div>
+      <div className='px-5 flex flex-col justify-center items-center'>
+        <h3 className='mb-4 font-semibold '>الفصول</h3>
+        <p className='mb-4 '>الفصل = 10% من الكتاب</p>
+        <div>
+          <CircularProgressbar
+            value={currentProgress}
+            text={`${currentProgress}%`}
+            minValue={0}
+            maxValue={100}
+          />
+        </div>
+        <div className='pt-5'>
+          <button
+            className='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l'
+            type='button'
+            onClick={() => handleIncrease()}
+          >
+            +
+          </button>
+          <button
+            className='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r'
+            type='button'
+            onClick={() => handleDecrease()}
+          >
+            -
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

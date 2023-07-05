@@ -14,10 +14,6 @@ function BookProfile() {
         </div>
         <div>
           <ChaptersCheckList />
-          <BookProfileprogress
-            progressPercentage={`45%`}
-            progressWidth={`45%`}
-          />
         </div>
       </div>
       <div>
