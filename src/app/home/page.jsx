@@ -55,6 +55,10 @@ function Home() {
           email: user.email,
           photoURL: user.photoURL,
           uid: user.uid,
+          readingProgress: {
+            bookId: 'book1',
+            currentProgress: `10%`,
+          },
           // Add any additional user data you want to store
         };
 
