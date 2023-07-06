@@ -2,26 +2,25 @@
 import React, { useState, useEffect } from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { auth } from '../../../services/firebaseConfig';
+import { auth, database } from '../../../services/firebaseConfig';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import {
+  getFirestore,
   collection,
   doc,
   updateDoc,
-  query,
-  where,
-  getDocs,
+  onSnapshot,
 } from 'firebase/firestore';
-import { database } from '../../../services/firebaseConfig';
 
 function ChaptersCheckList() {
-  const [currentProgress, setCurrentProgress] = useState(0);
   const [user] = useAuthState(auth); // Firebase authentication state
+  const [currentProgress, setCurrentProgress] = useState(0);
+
   const updateUserReadingProgress = async () => {
     try {
       const userDocRef = doc(collection(database, 'users'), user.uid);
       await updateDoc(userDocRef, {
-        readingProgress: { currentProgress },
+        currentProgress,
       });
       console.log('Reading progress updated successfully!');
     } catch (error) {
@@ -52,7 +51,22 @@ function ChaptersCheckList() {
       // Perform necessary actions when the user is available
       updateUserReadingProgress();
     }
-  }, [user, currentProgress]); // Trigger the effect whenever the user object or currentProgress changes
+  }, [currentProgress]); // Trigger the effect whenever the user object or currentProgress changes
+
+  useEffect(() => {
+    if (user) {
+      const progressRef = doc(database, 'users', user.uid);
+      onSnapshot(progressRef, (snapshot) => {
+        const data = snapshot.data();
+        if (data !== null) {
+          setCurrentProgress(data.currentProgress);
+        }
+      });
+    }
+  }, [user]); // Trigger the effect whenever the user object changes
+  if (!user) {
+    return <div>Loading...</div>; // Optional: Show a loading state while user object is null
+  }
 
   return (
     <div>
