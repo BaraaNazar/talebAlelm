@@ -4,28 +4,21 @@ import Link from 'next/link';
 
 function ExploreBysection({ name, link, section }) {
   return (
-    <div>
-      <Link href={section}>
-        <div class='relative rounded-lg shadow-lg cursor-pointer m-2 w-72 hover:shadow-sm transition duration-300 hover:shadow-white'>
-          <Image
-            class='w-full h-48 rounded-md'
-            src={link}
-            alt=''
-            width='100'
-            height='100'
-          />
+    <Link href={section}>
+      <div className='relative '>
+        <Image
+          className='w-full h-full rounded-lg'
+          src={link}
+          alt=''
+          width='100'
+          height='100'
+        />
 
-          <div class='absolute bottom-0 right-0 px-6 py-4 '>
-            <button
-              type='button'
-              class='text-black bg-orange-200  inline-block rounded bg-primary px-4 pt-2 pb-2 text-xs font-medium uppercase leading-normal shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]'
-            >
-              {name}
-            </button>{' '}
-          </div>
+        <div className='absolute bottom-2 right-2 px-6 py-4 text-black bg-orange-200 rounded-lg  pb-2  font-semibold'>
+          <span>{name}</span>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }
 

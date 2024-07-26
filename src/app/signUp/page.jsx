@@ -8,6 +8,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import googleLogo from '../../../public/images/logo_google_g_icon.svg';
 import Mekka from '../../../public/images/Mekka.jpeg';
+import { Loader } from 'lucide-react';
 
 function Index() {
   const [user, loading] = useAuthState(auth);
@@ -16,8 +17,11 @@ function Index() {
 
   if (loading) {
     return (
-      <div className='flex justify-center items-center w-full h-screen text-4xl font-bold'>
-        Loading...
+      <div className='flex flex-col justify-center items-center w-full h-screen text-xl lg:text-3xl font-bold'>
+        <Loader size='4em' className='animate-spin' />
+        <div>
+          <h1>جاري التحميل</h1>
+        </div>
       </div>
     );
   }
@@ -26,7 +30,7 @@ function Index() {
   }
 
   const login = async () => {
-    const result = await signInWithPopup(auth, googleAuth);
+    return await signInWithPopup(auth, googleAuth);
   };
 
   return (
@@ -34,10 +38,11 @@ function Index() {
       <div className='flex flex-col text-center '>
         <div className='flex flex-col w-screen justify-center items-center'>
           <Image
+            alt='Mekka'
             src={Mekka}
             height={500}
             width={500}
-            className='w-80 rounded'
+            className='w-80 rounded py-4'
           />
           <h1 className='text-sm p-10'>
             وَمَنْ يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ
